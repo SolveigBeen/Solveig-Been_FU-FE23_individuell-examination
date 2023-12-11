@@ -98,10 +98,21 @@ body {
     width:10rem;}
 }
 
-.btn__appStore {
-  border:none;
-  margin:2rem 0;
-  padding:0.5rem;
+
+.btn__app-links {
+  background-color: black;
+  border-radius: 5px;
+  display: flex;
+  gap:0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  color:white;
+  text-transform:none;
+  font-size: 1rem;
+  font-weight: 400;
+  margin:2rem 1rem;
+  padding:0.4rem 0.5rem;
+  width:8.5rem
 }
 
 .btn__submit {
@@ -123,11 +134,23 @@ body {
 
 /*   Header   */
 header {
-  background: #EEE;
+  background: #dbdbdb;
+  background-image: url("images/snow.png");
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  animation:snowfall 5s linear forwards infinite; 
+}
+
+/* Snowfall animation - background color of header modified from original #EEEEEE, to make the snow more visible */
+@keyframes snowfall{
+  0%{background-position: 0 0; }
+  20%{background-position: 20px 20px;}
+  40%{background-position: 40px 40px;}
+  60%{background-position: 60px 60px;}
+  80%{background-position: 80px 80px;}
+  100%{background-position: 100px 100px;}
 }
 
 .header-top {
@@ -147,6 +170,7 @@ header {
   font-weight: 500;
   @media screen and (min-width: 768px) {
     display:flex;
+    padding-left: 4rem;
   }   
 }
 
@@ -161,6 +185,9 @@ header {
 
 .menu__menuItem--grey {
   color:#999999;
+}
+.app-links {
+  display: flex;
 }
 
 /* Hero */
@@ -203,6 +230,7 @@ main {
 
 .small-card {
   background-color:#EBEBEB ;
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,6 +243,21 @@ main:hover {
 
 @keyframes change-gap {
   50% {grid-gap: 3rem;}
+}
+
+.small-card:hover {
+  animation: color-shock 5s infinite;
+  transform: scale(1.070);
+  background-image: url("images/snow.png");
+ 
+}
+@keyframes color-shock {
+  0% {background-color: rgb(231, 83, 83); }
+ 25% {background-color: rgb(202, 202, 73);}
+ 50% {background-color: rgb(73, 202, 176);}
+ 75% {background-color: rgb(70, 181, 75);}
+100% {background-color: rgb(152, 65, 169);}
+ 
 }
 
 .product-image {
